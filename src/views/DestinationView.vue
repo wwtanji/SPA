@@ -26,8 +26,10 @@
     </router-link>
 
   </div>
-</section>
 
+  <router-view/>
+
+</section>
 
 </template>
 
