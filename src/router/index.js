@@ -2,9 +2,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 
-
-
-
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   linkActiveClass: 'vue-active-link',
@@ -15,12 +12,18 @@ const router = createRouter({
       component: HomeView,
     },
     {
-      path: '/destination/:id/:slug', // Шлях з параметрами
+      path: '/destination/:id/:slug',
       name: 'destination.show',
       component: () => import('../views/DestinationView.vue'),
-      // eslint-disable-next-line no-undef
-      props: route=> ({id: parseInt(route.params.id)}),
+      props: (route) => ({...route.params, id: parseInt(route.params.id)}),
     },
+
+    {
+      path: '/destination/:id/:slug/:experienceSlug',
+      name: 'experience.show',
+      component: () => import('../views/ExperienceShow.vue'),
+      props: route=> ({...route.params, id: parseInt(route.params.id)})
+    }
   ],
 })
 
