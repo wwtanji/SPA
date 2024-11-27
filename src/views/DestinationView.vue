@@ -9,29 +9,21 @@
   </section>
   <p v-else>Destination not found.</p>
 
+  <section class="experiences">
+    <h2>Top Experiences in {{ destination.name }}</h2>
 
-<section class="experiences">
-  <h2>Top Experiences in {{ destination.name }}</h2>
-
-  <div class="cards">
-    <router-link
+    <div class="cards">
+      <router-link
         v-for="experience in destination.experiences"
         :key="experience.slug"
-        :to="{name: 'experience.show', params: {experienceSlug: experience.slug}}"
+        :to="{ name: 'experience.show', params: { experienceSlug: experience.slug } }"
+      >
+        <ExperienceCard :experience="experience" />
+      </router-link>
+    </div>
 
-    >
-      <ExperienceCard
-
-        :experience="experience"
-      />
-    </router-link>
-
-  </div>
-
-  <router-view/>
-
-</section>
-
+    <router-view />
+  </section>
 </template>
 
 <script>
@@ -40,17 +32,18 @@ import ExperienceCard from '@/components/ExperienceCard.vue';
 import GoBack from '@/components/GoBack.vue';
 
 export default {
-  components:{ExperienceCard, GoBack},
+  components: { ExperienceCard, GoBack },
   props: {
-    id: { type: Number, required: true }, // Отримуємо ID як пропс
+    id: { type: Number, required: true },
   },
   computed: {
     destination() {
-      // Знаходимо пункт призначення за пропсом ID
       return dataDestinations.destinations.find(
-        (destination) => destination.id === this.id // Пропс id — це строка, тому приводимо до числа
+        (destination) => destination.id === this.id
       );
     },
   },
 };
 </script>
+
+

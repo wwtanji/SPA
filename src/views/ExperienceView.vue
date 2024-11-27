@@ -4,7 +4,6 @@
     <img :src="`/images/${experience.image}`" :alt="experience.name">
     <p>{{ experience.description }}</p>
   </section>
-  <p v-else>Experience not found.</p>
 </template>
 
 <script>
@@ -37,5 +36,7 @@ export default {
 </script>
 
 <style scoped>
-/* Add your styles here */
+
+
+
 </style>
