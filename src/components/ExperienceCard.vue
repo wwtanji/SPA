@@ -5,8 +5,6 @@
     <span class="card__text">
       {{experience.name}}
     </span>
-
-
   </div>
 </template>
 
@@ -17,4 +15,3 @@ export default {
   },
 };
 </script>
-

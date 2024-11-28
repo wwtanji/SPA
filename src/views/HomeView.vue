@@ -29,7 +29,7 @@ const destinations = ref(dataDestinations.destinations);
 
 <style>
 #nav .vue-active-link {
-  color: lawngreen;
+  color: rgb(4, 255, 0);
 }
 </style>
 

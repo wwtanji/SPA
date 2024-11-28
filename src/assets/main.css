@@ -118,6 +118,13 @@ a {
   padding: 10px;
 }
 
+.experience-details{
+  border: 5px double black;
+  padding: 10px;
+  margin: 20px auto;
+}
+
+
 .experience-details img {
   float: left;
   margin: 10px;

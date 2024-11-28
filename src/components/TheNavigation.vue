@@ -16,11 +16,11 @@
 </template>
 
 <script>
-import sourceData from '../data.json'
+import dataDestinations from '../data.json';
 export default {
   data(){
     return {
-      destinations: sourceData.destinations
+      destinations: dataDestinations.destinations
     }
   }
 }
